@@ -155,7 +155,6 @@ function TopBreak_ReceiverFrontLength() = 0.5;
 function FrameBackLength() = 0.75+0.5;
 function ForendLength() = FrameExtension(length=FRAME_BOLT_LENGTH)
                         - 0.5
-                        -0.5
                         -TopBreak_ReceiverFrontLength();
 
 function ChargerTravel() = 1.75;
