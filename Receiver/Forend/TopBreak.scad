@@ -591,24 +591,14 @@ module TopBreak_BarrelCollar(rearExtension=0, cutter=false, clearance=0.01, debu
                        0.25+clear],
                        r=1/16, teardropFlip=[false,true,true]);
         
-        hull() {
-          
-          // Latch support
-          translate([(cutter?-0.5:0),
-                     -(TopBreak_LatchSupportWidth()/2)-clear,
-                     TopBreak_BarrelCollarBottomZ()-clear])
-          ChamferedCube([TopBreak_LatchSupportLength()+(cutter?0.5:0)+clear,
-                         TopBreak_LatchSupportWidth()+clear2,
-                         abs(TopBreak_BarrelCollarBottomZ())+clear],
-                         r=1/16, teardropFlip=[false,true,true]);
-                         
-          // Pivot Support
-          color("Silver")
-          translate([PivotX(),0,PivotZ()])
-          rotate([90,0,0])
-          ChamferedCylinder(r1=PivotRadius()+WallPivot()+clear, r2=1/16,
-                   h=TopBreak_LatchSupportWidth(), center=true);
-        }
+        // Latch support
+        translate([(cutter?-0.5:0),
+                   -(TopBreak_LatchSupportWidth()/2)-clear,
+                   TopBreak_BarrelCollarBottomZ()-clear])
+        ChamferedCube([TopBreak_LatchSupportLength()+(cutter?0.5:0)+clear,
+                       TopBreak_LatchSupportWidth()+clear2,
+                       abs(TopBreak_BarrelCollarBottomZ())+clear],
+                       r=1/16, teardropFlip=[false,true,true]);
       }
       
       
